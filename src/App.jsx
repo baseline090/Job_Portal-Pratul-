@@ -11,7 +11,7 @@ function App() {
       <NavBar /> 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/job-listing" element={<JobListing />} />
+        {/* <Route path="/job-listing" element={<JobListing />} /> */}
       </Routes>
     </Router>
   );

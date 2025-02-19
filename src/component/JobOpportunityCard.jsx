@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import arrowRight from "../assets/arrow-up-right.png";
+import arrowRight from "../assets/Homepage/arrow-up-right.png";
 import jobs from "../data/JobOpportunityCard";
 import { Link } from "react-router-dom";
 import FooterSection from "./Footer";
+import ImageSection from "./ImageSection";
 
 const JobOpportunityCard = ({ job }) => (
   <div className="shadow-lg rounded-lg overflow-hidden p-4 border-2 border-[#D0D0D0]">
@@ -80,7 +81,8 @@ const JobOpportunities = ({ searchKeyword, handleInputChange, searchInputRef }) 
         )}
       </div>
     </div>
-    <FooterSection/>
+    {/* <ImageSection/>
+    <FooterSection/> */}
    </>
   );
 };

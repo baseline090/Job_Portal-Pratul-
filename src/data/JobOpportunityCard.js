@@ -1,6 +1,6 @@
 
 
-import img from "../assets/AppStore.jpg";
+import img from "../assets/Homepage/AppStore.jpg";
 
 const jobs = [
   {

@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import category from "../assets/navbar/category.jpg";
 import search from "../assets/navbar/search.jpg";
 import location from "../assets/navbar/location.jpg";
-import banner from "../assets/navbar/banner.png";
+import banner from "../assets/navbar/bg.png";
 import arrow from "../assets/navbar/arrow.png";
 import HiringProcess from "./HiringProcess";
 import JobOpportunities from "./JobOpportunityCard";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import backgroundImg from "../assets/Homepage/background.jpg";
 
 const categories = [
   "Air Conditioners",
@@ -48,7 +49,9 @@ const Banner = () => {
   return (
     <>
       <div className="w-full p-[30px] md:px-12">
-        <div className="max-w-[1920px] mx-auto h-auto bg-[#FDF9F5]">
+        <div
+          className=" bg-[#FDF9F5] rounded-[25px] "
+        >
           <div className="flex flex-col md:flex-row items-center justify-between relative">
             {/* Content Section (Text and Search Fields) */}
             <div className="w-full md:w-1/2 md:text-left p-[30px] order-last md:order-first">
@@ -130,7 +133,6 @@ const Banner = () => {
                     placeholder="Keyword"
                     className="text-gray-700 text-sm w-full pl-3 pr-4"
                     value={searchKeyword}
-                    // onChange={(e) => setSearchKeyword(e.target.value)}
                     ref={searchInputRef}
                     onChange={handleInputChange}
                     onClick={handleSearchClick}
@@ -159,40 +161,47 @@ const Banner = () => {
             </div>
 
             {/* Arrow Image */}
-            <div className="absolute right-[39%] top-[72%] md:block hidden">
+            <div className="absolute right-[45%] top-[66%] md:block hidden">
               <img src={arrow} alt="Arrow" />
             </div>
-
             {/* Banner Image Section */}
-            <div className="w-full md:w-1/2 flex justify-center mt-6 md:mt-0 order-first md:order-last">
-              <img
-                src={banner}
-                alt="Job search"
-                className="w-full max-w-[500px] md:max-w-lg mt-[25%] rounded-full object-contain shadow-lg"
-              />
-            </div>
+            <div
+              className="w-full  bg-cover bg-center md:order-last md:mt-0 order-first"
+              style={{ backgroundImage: `url(${banner})`  ,aspectRatio: "838 / 792",}}
+            ></div>
+
+            
           </div>
 
-          {/* Job Titles Section */}
           <div className=" items-center gap-6 p-[30px]  md:flex hidden">
-            <h4 className="bg-[#FCFCFC]">Construction Worker</h4>
-            <h4 className="bg-[#FCFCFC]">Mechanic</h4>
-            <h4 className="bg-[#FCFCFC]">Machine Operator</h4>
-            <h4 className="bg-[#FCFCFC]">Technician</h4>
-            <h4 className="bg-[#FCFCFC]">Security Guard</h4>
+            {[
+              "Construction Worker",
+              "Mechanic",
+              "Carpenter",
+              "Machine Operator",
+              "Technician",
+              "Security Guard",
+            ].map((category) => (
+              <button
+                key={category}
+                className="rounded-full border border-gray-300 px-4 py-2 text-gray-600 hover:text-[#FF4D1C] hover:border-[#FF4D1C] transition-all duration-300"
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </div>
       </div>
-{/* ------------HiringProcess Section --------- */}
+      {/* ------------HiringProcess Section --------- */}
       <HiringProcess />
-      <div ref={jobListingsRef}>
+      {/* <div ref={jobListingsRef}>
         <JobOpportunities
           searchKeyword={searchKeyword}
           handleInputChange={handleInputChange}
           handleSearchClick={handleSearchClick}
           searchInputRef={searchInputRef}
         />
-      </div>
+      </div> */}
     </>
   );
 };
