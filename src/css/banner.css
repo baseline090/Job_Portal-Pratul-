@@ -1,0 +1,57 @@
+/* src/JobPostings.css */
+
+body {
+    background: #f0f4f8;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 600px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #FF5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .item:hover {
+    background-color: #FF5733;
+    color: white;
+  }
+  
+  .sub-dropdown {
+    display: none;
+    position: relative;
+  }
+  
+  .item:hover .sub-dropdown {
+    display: block; 
+  }
